@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p></p>
+Менеджеры
+Менеджеры
+<p></p>
+    {% for i in managers %}
+        {{ i.name }} | {{ i.telefon }} | {{ i.email }}
+        <p></p>
+    {% endfor %}
+
+{% endblock %}

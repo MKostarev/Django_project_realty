@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<p></p>
+
+    Поиск по категории: <a href="/"/> Все категории </a>
+    {% for cat in cat %}
+        <a href="/{{ cat.id }}"> | {{ cat.cat }}</a>
+    {% endfor %}
+
+<p></p>
+
+    {% for i in all_realty %}
+    {{ i.name }} | {{ i.adres }} | {{ i.info }} | {{ i.img }}
+        <p></p>
+    {% endfor %}
+{% endblock %}
