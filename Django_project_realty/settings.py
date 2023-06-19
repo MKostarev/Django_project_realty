@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'request',
     'index_base',
     'index_realty',
+    'index_managers',
 ]
 
 MIDDLEWARE = [

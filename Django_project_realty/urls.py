@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from index_managers.views import IndexManagersView
 from index_realty.views import IndexrealtyView
 from managers.views import ManagersView
 from realty.views import realtyy_view, RealtyListView
@@ -19,7 +20,9 @@ urlpatterns = [
     path('index/', RealtyListView.as_view()),
     #path('index/', ManagersListView.as_view())
     path('index_base/', index_base_def),
-    path('index_realty/', IndexrealtyView.as_view())
+    path('index_realty/', IndexrealtyView.as_view()),
+    path('index_managers/', IndexManagersView.as_view())
+
 
 ]
 

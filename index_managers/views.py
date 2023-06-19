@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from realty.models import Realty
 
-# Create your views here.
+class IndexManagersView(ListView):
+    model = Realty
+    template_name = 'index_managers.html'
+    context_object_name = 'all_realty'
