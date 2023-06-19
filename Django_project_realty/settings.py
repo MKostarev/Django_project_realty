@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'realty',
     'managers',
     'request',
+    'index_base',
 ]
 
 MIDDLEWARE = [

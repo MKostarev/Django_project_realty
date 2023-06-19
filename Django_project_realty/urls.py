@@ -14,6 +14,7 @@ urlpatterns = [
     path('request/', FormView.as_view()),
     path('index/', RealtyListView.as_view()),
     #path('index/', ManagersListView.as_view())
+    path('index_base/', views.index_base, name=''),
 
 ]
 
