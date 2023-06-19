@@ -1,7 +1,10 @@
 from django.views.generic import ListView
-from realty.models import Realty
+from managers.models import Managers
 
 class IndexManagersView(ListView):
-    model = Realty
+    model = Managers
     template_name = 'index_managers.html'
-    context_object_name = 'all_realty'
+    context_object_name = 'managers'
+
+
+

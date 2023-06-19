@@ -1,3 +1,4 @@
+
 {% extends 'index_base.html' %}
 
 
@@ -7,12 +8,16 @@
         <div class="container">
 
           <div class="section-title" data-aos="fade-down">
-            <span>МЕНЕДЖЕРЫ</span>
-            <h2>МЕНЕДЖЕРЫ</h2>
+            <span>ОБЪЕКТЫ</span>
+            <h2>ОБЪЕКТЫ</h2>
           </div>
         </div>
       </section><!-- End Services Section -->
 
+        <form class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get">
+          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск">
+          <button type="submit">Поиск</button>
+        </form>
 
         <!-- ======= Features Section ======= -->
       <section id="features" class="features">
@@ -20,16 +25,16 @@
 
           <div class="row">
 
-              {% for i in managers %}
+              {% for i in all_realty %}
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="card" data-aos="fade-up">
-                <img src="{{ i.img.url }}" class="card-img-top" alt="Sandwich" style="height: 100px">
+                <img src="{{ i.img.url }}" class="card-img-top" alt="Sandwich" style="height: 200px">
                 <div class="card-body">
                   <i class="bx bx-tachometer"></i>
                   <h5 class="card-title"><a href="">Объект: {{ i.name }}</a></h5>
-                  <p class="card-text">Описание: {{ i.telefon }}</p>
-                    <p class="card-text">Адрес: {{ i.email }}</p>
+                  <p class="card-text">Описание: {{ i.info }}</p>
+                    <p class="card-text">Адрес: {{ i.adres }}</p>
                 </div>
               </div>
             </div>
