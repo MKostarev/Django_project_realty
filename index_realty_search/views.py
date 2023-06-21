@@ -11,4 +11,21 @@ class IndexRealtySearchResult(ListView):
 
     def get_queryset(self):
        query = self.request.GET.get('q')
-       return Realty.objects.filter(Q(info__icontains=query) | Q(adres__icontains=query))#| Q(name__icontains=query) | Q(adres__icontains=query))
+
+       if query:
+           queryset = Realty.objects.filter(Q(info__icontains=query) | Q(adres__icontains=query) | Q(name__icontains=query))
+       else:
+           queryset = Realty.objects.all()
+
+       min = self.request.GET.get('min')
+       max = self.request.GET.get('max')
+
+       if min:
+           queryset = queryset.filter(price__gte=min)
+
+       if max:
+           queryset = queryset.filter(price__lte=max)
+
+       return queryset
+
+

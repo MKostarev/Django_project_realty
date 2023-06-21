@@ -8,7 +8,7 @@ from realty.models import Realty, Category_realty
 
 
 class RealtyAdminView(admin.ModelAdmin):
-    list_display = ('name', 'adres', 'info', 'cat', 'id', 'img')
+    list_display = ('name', 'adres', 'info', 'cat', 'id', 'price', 'area')
     search_fields = ('name', 'adres')
     list_display_links = ('name', 'adres')
 

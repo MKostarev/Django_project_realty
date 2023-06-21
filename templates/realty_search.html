@@ -16,6 +16,9 @@
 
         <form class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get">
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск">
+            <input name="min" class="form-control mr-sm-2" type="text" placeholder="min">
+            <input name="max" class="form-control mr-sm-2" type="text" placeholder="max">
+
           <button type="submit">Поиск</button>
         </form>
 
@@ -35,6 +38,8 @@
                   <h5 class="card-title"><a href="">Объект: {{ i.name }}</a></h5>
                   <p class="card-text">Описание: {{ i.info }}</p>
                     <p class="card-text">Адрес: {{ i.adres }}</p>
+                    <p class="card-text">Площадь: {{ i.area }} м2</p>
+                    <p class="card-text">Цена: {{ i.price }} руб.</p>
                 </div>
               </div>
             </div>

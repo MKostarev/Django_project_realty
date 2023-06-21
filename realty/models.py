@@ -6,6 +6,8 @@ class Realty (models.Model):
     info = models.TextField()
     img = models.ImageField(upload_to='img')
     cat = models.ForeignKey('Category_realty', on_delete=models.PROTECT)
+    price = models.IntegerField(blank=True, null=True)
+    area = models.DecimalField(blank=True, null=True, max_digits=100, decimal_places=2)
 
 class Category_realty(models.Model):
     cat = models.CharField(max_length=50)
