@@ -19,6 +19,8 @@ class IndexRealtySearchResult(ListView):
 
        min = self.request.GET.get('min')
        max = self.request.GET.get('max')
+       min_area = self.request.GET.get('min_area')
+       max_area = self.request.GET.get('max_area')
 
        if min:
            queryset = queryset.filter(price__gte=min)
@@ -26,6 +28,12 @@ class IndexRealtySearchResult(ListView):
        if max:
            queryset = queryset.filter(price__lte=max)
 
+       if min_area:
+           queryset = queryset.filter(area__gte=min_area)
+
+       if max_area:
+           queryset = queryset.filter(area__lte=max_area)
+#
        return queryset
 
 

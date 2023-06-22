@@ -15,10 +15,13 @@
       </section><!-- End Services Section -->
 
         <form class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get">
-          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск">
-            <input name="min" class="form-control mr-sm-2" type="text" placeholder="min">
-            <input name="max" class="form-control mr-sm-2" type="text" placeholder="max">
-
+          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск по ключевому слову">
+            <p></p>
+            <input name="min" class="form-control mr-sm-2" type="text" placeholder="Мин. цену">
+            <input name="max" class="form-control mr-sm-2" type="text" placeholder="Макс. цену">
+            <p></p>
+            <input name="min_area" class="form-control mr-sm-2" type="text" placeholder="Мин. площадь">
+            <input name="max_area" class="form-control mr-sm-2" type="text" placeholder="Макс. площадь">
           <button type="submit">Поиск</button>
         </form>
 

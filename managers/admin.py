@@ -6,7 +6,7 @@ from managers.models import Managers, Category_managers
 
 # Register your models here.
 class ManagersAdminView(admin.ModelAdmin):
-    list_display = ('name', 'telefon')
+    list_display = ('name', 'telefon', 'img')
     search_fields = ('name', 'telefon')
 
 
