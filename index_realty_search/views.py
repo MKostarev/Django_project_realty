@@ -1,7 +1,7 @@
 from django.db.models import Q
 
 from django.views.generic import ListView
-from realty.models import Realty
+from realty.models import Realty, Category_realty
 
 
 class IndexRealtySearchResult(ListView):
@@ -35,5 +35,11 @@ class IndexRealtySearchResult(ListView):
            queryset = queryset.filter(area__lte=max_area)
 #
        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category = Category_realty.objects.all()
+        context['category'] = category
+        return context
 
 

@@ -16,20 +16,20 @@
 
         <!-- ======= Features Section ======= -->
       <section id="features" class="features">
-        <div class="container">
+        <div class="container" >
 
           <div class="row">
 
               {% for i in managers %}
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="col-6 col-md-4" >
               <div class="card" data-aos="fade-up">
-                <img class="card-img-top" alt="Sandwich" style="width: 300px; height: 0px; padding-bottom: 56.25%; background: url({{ i.img.url }}) no-repeat center; background-size: cover;" >
+                <img class="card-img-top" alt="Sandwich" style="width: 100%; height: 0px; padding-bottom: 56.25%; background: url({{ i.img.url }}) no-repeat center; background-size: cover;" >
                 <div class="card-body">
                   <i class="bx bx-tachometer"></i>
-                  <h5 class="card-title"><a href="">Объект: {{ i.name }}</a></h5>
-                  <p class="card-text">Описание: {{ i.telefon }}</p>
-                    <p class="card-text">Адрес: {{ i.email }}</p>
+                  <h5 class="card-title"><a href="">Менеджер: {{ i.name }}</a></h5>
+                  <p class="card-text">Телефон: {{ i.telefon }}</p>
+                    <p class="card-text">Email: {{ i.email }}</p>
                 </div>
               </div>
             </div>

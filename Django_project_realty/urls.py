@@ -15,7 +15,7 @@ from index_base.views import index_base_def
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<int:category>/', realtyy_view),
-    path('', realtyy_view),
+    path('', index_base_def),
     path('managers/', ManagersView.as_view()),
     path('request/', FormView.as_view()),
     path('index/', RealtyListView.as_view()),

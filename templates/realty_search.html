@@ -14,6 +14,20 @@
         </div>
       </section><!-- End Services Section -->
 
+        <form class="form-check-inline mt-2 mt-md-0" action="" method="get">
+        <div class="form-group">
+            <select name="category" class="form-control" onchange="this.form.submit()">
+                <option value="">Тип недвижимости
+
+                    {% for i in category %}
+                    <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s" %}selected{% endif %}>{{ i }}</option>
+
+                    {% endfor %}
+                </option>
+            </select>
+        </div>
+        </form>
+
         <form class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get">
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск по ключевому слову">
             <p></p>
