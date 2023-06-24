@@ -15,124 +15,30 @@
         </div>
       </section><!-- End Services Section -->
 
-        <form action="" method="post">
-        {% csrf_token %}
-        {{  form.as_p }}
-        <div class="text-center"><button type="submit">Send Message</button></div>
-        </form>
-
-
-
-
-    <form action="" method="post">
-        <label for="Сообщение">Сообщение: </label>
-        <input id="name" type="text" name="Сообщение" value="{{ current_name }}">
-        <input id="email" type="text" name="Сообщение" value="{{ current_name }}">
-        <input id="question" type="text" name="Сообщение" value="{{ current_name }}">
-        <input type="submit" value="OK">
-    </form>
-
-
-
-
-
-    <form action="" method="post" role="form" class="php-email-form mt-4" data-aos="fade-up" data-aos-delay="400">
-        {% csrf_token %}
-    <div class="form-group">
-        <label for="{{ form.name.id_for_label }}">Your Name</label>
-        {{ form.name }}
-    </div>
-
-    <div class="form-group">
-        <label for="{{ form.email.id_for_label }}">Your Email</label>
-        {{ form.email }}
-    </div>
-
-    <div class="form-group">
-        <label for="{{ form.question.id_for_label }}">Message</label>
-        {{ form.question }}
-    </div>
-
-    <div class="text-center"><button type="submit">Отправить</button></div>
-</form>
-
-
-
 
     <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
         <div class="container">
 
-          <form action="" method="post" role="form" class="php-email-form mt-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="row">
+          <form action="" method="post">
+                {% csrf_token %}
+             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
               </div>
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="question" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+             </div>
+              <div class="form-group mt-3">
+                <input type="question" class="form-control" name="question" id="question" placeholder="Your question" required>
+              </div>
+                  <p></p>
+              <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
 
         </div>
       </section><!-- End Contact Us Section -->
-
-
-
-
-    <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</form>
-
-<form action="" method="post">
-    {% csrf_token %}
-    <label for="id_field1">Field 1:</label>
-    <input type="text" name="name" id="id_field1">
-    <label for="id_field2">Field 2:</label>
-    <input type="text" name="email" id="id_field2">
-    <div class="text-center">
-        <button type="submit">Send Message</button>
-    </div>
-</form>
-
-
-
 
 
 {% endblock %}
