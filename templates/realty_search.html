@@ -20,10 +20,11 @@
                 <option value="">Тип недвижимости
 
                     {% for i in category %}
+
                     <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s" %}selected{% endif %}>{{ i }}</option>
 
                     {% endfor %}
-                </option>
+
             </select>
         </div>
         </form>
