@@ -25,19 +25,25 @@
 
                     {% endfor %}
 
-            </select>
-        </div>
-        </form>
+                </select>
+            </div>
 
-        <form class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get">
-          <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск по ключевому слову">
-            <p></p>
-            <input name="min" class="form-control mr-sm-2" type="text" placeholder="Мин. цену">
-            <input name="max" class="form-control mr-sm-2" type="text" placeholder="Макс. цену">
-            <p></p>
-            <input name="min_area" class="form-control mr-sm-2" type="text" placeholder="Мин. площадь">
-            <input name="max_area" class="form-control mr-sm-2" type="text" placeholder="Макс. площадь">
-          <button type="submit">Поиск</button>
+                    <p></p>
+
+            <div class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get"></div>
+              <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск по ключевому слову">
+                <p></p>
+                <input name="min" class="form-control mr-sm-2" type="text" placeholder="Мин. цену" value="{{ re }}">
+                <input name="max" class="form-control mr-sm-2" type="text" placeholder="Макс. цену">
+                <p></p>
+                <input name="min_area" class="form-control mr-sm-2" type="text" placeholder="Мин. площадь">
+                <input name="max_area" class="form-control mr-sm-2" type="text" placeholder="Макс. площадь">
+                    <div class="form-group">
+                        <div class="btn-group">
+                            <button class="btn-outline-success" type="submit"> Поиск</button>
+                            <button class="btn-outline-secondary" type="button" onclick="resetForm(this.form)">Очистить</button>
+                        </div>
+                    </div>
         </form>
 
         <!-- ======= Features Section ======= -->
