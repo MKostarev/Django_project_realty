@@ -21,7 +21,7 @@
 
                     {% for i in category %}
 
-                    <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s" %}selected{% endif %}>{{ i }}</option>
+                        <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s"%}selected{% endif %}>{{ i }}</option>
 
                     {% endfor %}
 
