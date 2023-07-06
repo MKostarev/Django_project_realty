@@ -3,6 +3,40 @@
 
 
 {% block content %}
+
+    {# стили для формы поиска#}
+<style>
+  .form-inline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .form-inline .form-group {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+
+  .form-inline .form-group .btn-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-inline .form-group .btn-group .btn {
+    margin-left: 5px;
+  }
+
+  @media (min-width: 768px) {
+    .form-inline .form-group {
+      flex: 0 0 auto;
+      margin-right: 10px;
+    }
+
+    .form-inline .form-group:last-child {
+      margin-right: 0;
+    }
+  }
+</style>
         <!-- ======= Services Section ======= -->
       <section id="services" class="services">
         <div class="container">
@@ -14,37 +48,43 @@
         </div>
       </section><!-- End Services Section -->
 
-        <form class="form-check-inline mt-2 mt-md-0" action="" method="get">
-        <div class="form-group">
-            <select name="category" class="form-control" onchange="this.form.submit()">
-                <option value="">Тип недвижимости
+    {# ФОРМА ПОИСКА начало#}
+<form class="form-inline mt-2 mt-md-0" role="form" action="" method="get">
+  <div class="form-group">
+    <select name="category" class="form-control" onchange="this.form.submit()">
+      <option value="">Тип недвижимости</option>
+      {% for i in category %}
+        <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s" %}selected{% endif %}>{{ i }}</option>
+      {% endfor %}
+    </select><p></p>
+    <input name="q" class="form-control" type="text" placeholder="Поиск по слову" aria-label="Search" value="{{ request.GET.q }}">
+  </div>
+  <div class="form-group">
+    <input name="min" class="form-control" type="number" min="0" placeholder="Мин. цена" aria-label="Search" value="{{ request.GET.min }}"><p></p>
+    <input name="max" class="form-control" type="number" min="0" placeholder="Макс. цена" aria-label="Search" value="{{ request.GET.max }}">
+  </div>
+ <div class="form-group">
+    <input name="min_area" class="form-control" type="number" min="0" placeholder="Мин. площадь" aria-label="Search" value="{{ request.GET.max }}"><p></p>
+    <input name="max_area" class="form-control" type="number" min="0" placeholder="Макс. площадь" aria-label="Search" value="{{ request.GET.max }}">
+  </div>
+  <div class="form-group">
+    <div class="btn-group">
+      <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <button class="btn btn-outline-secondary" type="button" onclick="resetForm(this.form)">Очистить</button>
+    </div>
+  </div>
+</form>
+        {# ФОРМА ПОИСКА конец#}
 
-                    {% for i in category %}
-
-                        <option value="{{ i.pk }}" {% if request.GET.category|stringformat:"s" == i.pk|stringformat:"s"%}selected{% endif %}>{{ i }}</option>
-
-                    {% endfor %}
-
-                </select>
-            </div>
-
-                    <p></p>
-
-            <div class="form-inline mt-2 mt-md-0" action="{% url 'search' %}" method="get"></div>
-              <input name="q" class="form-control mr-sm-2" type="text" placeholder="Поиск по ключевому слову">
-                <p></p>
-                <input name="min" class="form-control mr-sm-2" type="text" placeholder="Мин. цену" value="{{ re }}">
-                <input name="max" class="form-control mr-sm-2" type="text" placeholder="Макс. цену">
-                <p></p>
-                <input name="min_area" class="form-control mr-sm-2" type="text" placeholder="Мин. площадь">
-                <input name="max_area" class="form-control mr-sm-2" type="text" placeholder="Макс. площадь">
-                    <div class="form-group">
-                        <div class="btn-group">
-                            <button class="btn-outline-success" type="submit"> Поиск</button>
-                            <button class="btn-outline-secondary" type="button" onclick="resetForm(this.form)">Очистить</button>
-                        </div>
-                    </div>
-        </form>
+    <script>
+          function resetForm(form) {
+            form.category.value = '';
+            form.q.value = '';
+            form.min.value = '';
+            form.max.value = '';
+            form.submit();
+          }
+        </script>
 
         <!-- ======= Features Section ======= -->
       <section id="features" class="features">

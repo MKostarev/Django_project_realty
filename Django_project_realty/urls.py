@@ -9,17 +9,16 @@ from index_realty.views import IndexrealtyView
 from managers.views import ManagersView
 from realty.views import realtyy_view, RealtyListView
 from request.views import FormView
-from index_base.views import index_base_def
-
+from index_base.views import IndexBaseView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<int:category>/', realtyy_view),
-    path('', index_base_def),
+    path('', IndexBaseView.as_view()),
     path('managers/', ManagersView.as_view()),
     path('request/', FormView.as_view()),
     path('index/', RealtyListView.as_view()),
-    path('index_home/', index_base_def),
+    path('index_home/', IndexBaseView.as_view()),
     path('index_realty/', IndexrealtyView.as_view()),
     path('index_managers/', IndexManagersView.as_view()),
     path('index_request/', IndexRequestView.as_view()),

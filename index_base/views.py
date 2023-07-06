@@ -1,5 +1,13 @@
-from django.shortcuts import render
+
+from django.views.generic import CreateView
+
+from request.models import Rerust
+
 
 # Create your views here.
-def index_base_def(request):
-    return render(request, 'index_home.html')
+
+class IndexBaseView (CreateView):
+    template_name = 'index_home.html'
+    model = Rerust
+    fields = ('name', 'email', 'question')
+    success_url = '/index_home'
