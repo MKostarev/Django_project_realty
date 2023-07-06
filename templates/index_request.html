@@ -17,14 +17,14 @@
 
 
     <!-- ======= Contact Us Section ======= -->
-      <section id="contact" class="contact">
+      <!--<section id="contact" class="contact">
         <div class="container">
 
-          <form action="" method="post" role="form"  data-aos="fade-up" data-aos-delay="400">
-                {% csrf_token %}
+          <form action="/" method="post" role="form" class="php-email-form"  data-aos="fade-up" data-aos-delay="400">
+
              <div class="row">
               <div class="col-md-6 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    <input type="text" class="form-control" name="name"  id="name" placeholder="Your Name" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
                     <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
@@ -35,11 +35,35 @@
                     <input type="question" class="form-control" name="question" id="question" placeholder="Your question" required>
               </div>
                   <p></p>
-              <div class="text-center php-email-form "><button type="submit">Send Message</button></div>
+              <div class="text-center  "><button type="submit">Send Message</button></div>
+          </form>
+
+        </div>
+      </section> End Contact Us Section -->
+
+
+ <!-- ======= Contact Us Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+
+          <form action="" method="post">
+                {% csrf_token %}
+             <div class="row">
+              <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Ваш Email" required>
+              </div>
+             </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="question" id="question" placeholder="Ваш вопрос" required>
+              </div>
+                  <p></p>
+              <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
           </form>
 
         </div>
       </section><!-- End Contact Us Section -->
-
 
 {% endblock %}

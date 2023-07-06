@@ -6,5 +6,5 @@ class IndexRequestView (CreateView):
     template_name = 'index_request.html'
     model = Rerust
     fields = ('name', 'email', 'question', 'question2')
-    success_url = '/index_base'
+    success_url = '/index_home'
 
