@@ -19,7 +19,7 @@ class IndexRealtySearchResult(ListView):
 
 
        if query:
-           queryset = Realty.objects.filter(Q(info__icontains=query) | Q(adres__icontains=query) | Q(name__icontains=query))
+           queryset = Realty.objects.filter(Q(info__iregex=query) | Q(adres__iregex=query) | Q(name__iregex=query))
        else:
            queryset = Realty.objects.all()
 

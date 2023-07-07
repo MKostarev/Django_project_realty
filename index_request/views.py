@@ -10,10 +10,10 @@ class IndexRequestView (CreateView):
     fields = ('name', 'email', 'question')
     success_url = '/index_home'
 
-    #def mailsendview(request):
-    #    subject = 'test mail'
-    #    message = 'Hello'
-    #    from_email = 'Django'
-    #    recipient_list = ['mikh.kostarev@yandex.ru']
-    #    send_mail(subject, message, from_email, recipient_list)
-    #    return render(request, 'index_request.html')
+#def mailsendview(request):
+#    subject = 'test mail'
+#    message = 'Hello'
+#    from_email = 'Django'
+#    recipient_list = ['mikh.kostarev@yandex.ru']
+#    send_mail(subject, message, from_email, recipient_list)
+#    return render(request, 'index_request.html')
