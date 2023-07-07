@@ -6,6 +6,7 @@ from index_managers.views import IndexManagersView
 from index_realty_search.views import IndexRealtySearchResult
 from index_request.views import IndexRequestView
 from index_realty.views import IndexrealtyView
+from mail_send.views import mailsendview
 from managers.views import ManagersView
 from realty.views import realtyy_view, RealtyListView
 from request.views import FormView
@@ -21,7 +22,9 @@ urlpatterns = [
     path('index_home/', IndexBaseView.as_view()),
     path('index_realty/', IndexrealtyView.as_view()),
     path('index_managers/', IndexManagersView.as_view()),
-    path('index_request/', IndexRequestView.as_view()),
+    path('index_request/', mailsendview),
+    #path('index_request/', IndexRequestView.as_view()),
+
     path('realty_search/', IndexRealtySearchResult.as_view(), name='search')
 
 
