@@ -22,7 +22,7 @@ urlpatterns = [
     path('index_home/', IndexBaseView.as_view()),
     path('index_realty/', IndexrealtyView.as_view()),
     path('index_managers/', IndexManagersView.as_view()),
-    path('index_request/', mailsendview),
+    path('index_request/', IndexRequestView.as_view()),
     #path('index_request/', IndexRequestView.as_view()),
     path('realty_search/', IndexRealtySearchResult.as_view(), name='search')
 
