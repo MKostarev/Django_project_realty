@@ -96,10 +96,16 @@
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="card" data-aos="fade-up">
-                <img src="{{ i.img.url }}" class="card-img-top" alt="Sandwich" style="height: 200px">
+                  <h5 class="card-title"><a href="">Объект: {{ i.name }}</a></h5>
+                <img src="{{ i.img.url }}" class="card-img-top" alt="Image" style="height: 200px">
+
+
+                  <img src="{{ i.gallery.url }}" class="card-img-top" alt="Gallery" style="height: 200px">
+
+
                 <div class="card-body">
                   <i class="bx bx-tachometer"></i>
-                  <h5 class="card-title"><a href="">Объект: {{ i.name }}</a></h5>
+
                   <p class="card-text">Описание: {{ i.info }}</p>
                     <p class="card-text">Адрес: {{ i.adres }}</p>
                     <p class="card-text">Площадь: {{ i.area }} м2</p>

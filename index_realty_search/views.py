@@ -1,7 +1,7 @@
 from django.db.models import Q
 
 from django.views.generic import ListView
-from realty.models import Realty, Category_realty
+from realty.models import Realty, Category_realty, Gallery
 
 
 class IndexRealtySearchResult(ListView):
