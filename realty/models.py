@@ -9,13 +9,9 @@ class Realty (models.Model):
     price = models.IntegerField(blank=True, null=True)
     area = models.IntegerField(blank=True, null=True)
 
-
-
 class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery')
     realty = models.ForeignKey(Realty, on_delete=models.PROTECT, null=True, blank=True, related_name='gallery')
-
-
 
 class Category_realty(models.Model):
     cat = models.CharField(max_length=50)
