@@ -11,6 +11,7 @@ from managers.views import ManagersView
 from realty.views import realtyy_view, RealtyListView
 from request.views import FormView
 from index_base.views import IndexBaseView
+from index_realty_card.views import realty_detail_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,7 +25,8 @@ urlpatterns = [
     path('index_managers/', IndexManagersView.as_view()),
     path('index_request/', IndexRequestView.as_view()),
     #path('index_request/', IndexRequestView.as_view()),
-    path('realty_search/', IndexRealtySearchResult.as_view(), name='search')
+    path('realty_search/', IndexRealtySearchResult.as_view(), name='search'),
+    path('realty_card/<int:id>/', realty_detail_view, name='realty_card')
 
 
 
