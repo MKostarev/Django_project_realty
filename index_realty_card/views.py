@@ -18,7 +18,6 @@ def realty_detail_view(request, id):
 #    success_url = '/index_home'
 
 
-
 #class Realty_detail_view (ListView):
 #    template_name = 'index.html'
 #    realty_card = Realty.objects.get(id=id)
