@@ -29,3 +29,4 @@ def send_email_to_manager(sender, instance, created, **kwargs):
         #recipient_list = ['hangdi1990@gmail.com']
         recipient_list = {instance.email}
         send_mail(sudject, message, from_email, recipient_list)
+

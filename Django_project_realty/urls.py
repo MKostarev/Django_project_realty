@@ -2,6 +2,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+
+from index_manager_card.views import manager_detail_view
 from index_managers.views import IndexManagersView
 from index_realty_search.views import IndexRealtySearchResult
 from index_request.views import IndexRequestView
@@ -26,7 +28,8 @@ urlpatterns = [
     path('index_request/', IndexRequestView.as_view()),
     #path('index_request/', IndexRequestView.as_view()),
     path('realty_search/', IndexRealtySearchResult.as_view(), name='search'),
-    path('realty_card/<int:id>/', realty_detail_view, name='realty_card')
+    path('realty_card/<int:id>/', realty_detail_view, name='realty_card'),
+    path('index_manager_card/<int:id>/', manager_detail_view, name='manager_card')
 
 
 

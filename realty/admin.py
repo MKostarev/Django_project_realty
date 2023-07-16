@@ -11,7 +11,7 @@ class GalleryInline(admin.TabularInline):
     model = Gallery
 
 class RealtyAdminView(admin.ModelAdmin):
-    list_display = ('name', 'adres', 'info', 'cat', 'id', 'price', 'area')
+    list_display = ('name', 'adres', 'info', 'cat', 'id', 'price', 'area', 'managers')
     search_fields = ('name', 'adres')
     list_display_links = ('name', 'adres')
     inlines = [GalleryInline, ]

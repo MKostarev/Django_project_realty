@@ -14,11 +14,11 @@
                 <div class="swiper-wrapper align-items-center">
 
 
-                    {% for i in realty_card.gallery.all %}
-                  <div class="swiper-slide">
-                    <img src="{{ i.image.url }}" alt="">
+
+                  <div class="card-img-top">
+                    <img src="{{ manager_card.img.url }}" style="width: 300px ">
                   </div>
-                    {% endfor %}
+
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -27,20 +27,30 @@
 
             <div class="col-lg-4">
               <div class="portfolio-info">
-                <h3>{{ realty_card.name }}</h3>
+                <h3>{{ manager_card.name }}</h3>
                 <ul>
-                    <li><strong>Площадь</strong>: {{ realty_card.area }}</li>
-                    <li><strong>Адрес</strong>: {{ realty_card.adres }}</li>
-                    <li><strong>Цена</strong>: {{ realty_card.price }}</li>
-                    <li><strong>Менеджер</strong>: {{ realty_card.managers }}</li>
-                    <li><strong>ID</strong>: {{ realty_card.managers.id }}</li>
+                    <li><strong>Телефон</strong>: {{ manager_card.telefon }}</li>
+                    <li><strong>Email</strong>: {{ manager_card.email }}</li>
+                    <li><strong>ID</strong>: {{ manager_card.id }}</li>
+
+                    <ul>
+                    <li><strong>Другие объекты менеджера</strong>:
+                    {% for i in realty %}
+                    <div class="text">
+                        {% if i.managers.id == manager_card.id %}
+                        <a href="/realty_card/{{ i.id }}">Объект: {{ i.name }}</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    </ul>
+                </li>
+
+
+
+
                 </ul>
               </div>
               <div class="portfolio-description">
-                <h2>Описание</h2>
-                <p>
-                  {{ realty_card.info }}
-                </p>
               </div>
             </div>
 
@@ -61,11 +71,12 @@
     <!-- End Services Section -->
 
     <!-- ======= Contact Us Section ======= -->
-      <section id="contact" class="contact">
+     <section id="contact" class="contact">
+
         <div class="container">
 
           <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
-                {% csrf_token %}
+                    {% csrf_token %}
              <div class="row">
               <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
@@ -78,8 +89,8 @@
                 <input type="text" class="form-control" name="question" id="question" placeholder="Ваш вопрос" required>
               </div>
                   <p></p>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="id_manager" id="id_manager" value={{ realty_card.managers.id }}>
+                  <div class="form-group mt-3">
+                <input type="text" class="form-control" name="id_manager" id="id_manager" value= {{ manager_card.id }} >
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
@@ -97,7 +108,7 @@
         <input name="name" placeholder="Имя">
         <input name="email" placeholder="email">
         <input name="question" placeholder="question">
-        <input name="id_manager" value={{ realty_card.managers.id }}>
+        <input name="id_manager" value= {{ manager_card.id }} >
         <button type="submit"> Отправить </button>
     </form>
 
