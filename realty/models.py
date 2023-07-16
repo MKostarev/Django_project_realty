@@ -1,5 +1,7 @@
 from django.db import models
 
+from managers.models import Managers
+
 class Realty (models.Model):
     name = models.CharField(max_length=50)
     adres = models.CharField(max_length=300)
@@ -8,6 +10,8 @@ class Realty (models.Model):
     cat = models.ForeignKey('Category_realty', on_delete=models.PROTECT)
     price = models.IntegerField(blank=True, null=True)
     area = models.IntegerField(blank=True, null=True)
+    managers = models.ForeignKey(Managers, blank=True, null=True, on_delete=models.PROTECT)
+
 
 class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery')
@@ -18,6 +22,15 @@ class Category_realty(models.Model):
 
     def __str__(self):
         return self.cat
+
+#class Category_managers2(models.Model):
+#    catt2 = models.CharField(max_length=50)
+#
+#    def __str__(self):
+#        return self.cat
+
+
+
 
 #class Managers_realty(models.Model):
 #    name = models.CharField(max_length=100)

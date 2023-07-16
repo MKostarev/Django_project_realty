@@ -32,6 +32,8 @@
                     <li><strong>Площадь</strong>: {{ realty_card.area }}</li>
                     <li><strong>Адрес</strong>: {{ realty_card.adres }}</li>
                     <li><strong>Цена</strong>: {{ realty_card.price }}</li>
+                    <li><strong>Менеджер</strong>: {{ realty_card.managers }}</li>
+                    <li><strong>ID</strong>: {{ realty_card.managers.id }}</li>
                 </ul>
               </div>
               <div class="portfolio-description">
@@ -59,11 +61,11 @@
     <!-- End Services Section -->
 
     <!-- ======= Contact Us Section ======= -->
-      <section id="contact" class="contact">
+     <!-- <section id="contact" class="contact">
         <div class="container">
 
           <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
-                {% csrf_token %}
+
              <div class="row">
               <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
@@ -80,8 +82,24 @@
           </form>
 
         </div>
-      </section>
+      </section>-->
     <!-- End Contact Us Section -->
+
+
+    <div class="container">
+
+    <form action="" method="post">
+     {% csrf_token %}
+        <input name="name" placeholder="Имя">
+        <input name="email" placeholder="email">
+        <input name="question" placeholder="question">
+        <input name="id_manager" placeholder="id_manager">
+        <button type="submit"> Отправить </button>
+    </form>
+
+</div>
+
+
 
 {% endblock %}
 

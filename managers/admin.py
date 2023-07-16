@@ -12,3 +12,5 @@ class ManagersAdminView(admin.ModelAdmin):
 
 admin.site.register(Managers, ManagersAdminView)
 admin.site.register(Category_managers)
+
+
