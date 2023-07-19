@@ -9,4 +9,6 @@ class RerustForm(forms.ModelForm):
         model = Rerust
         fields = ['name', 'email', 'question', 'id_manager']
 
+    id_manager = forms.IntegerField(widget=forms.HiddenInput)
+
 

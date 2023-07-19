@@ -9,24 +9,27 @@ from request.models import Rerust
 
 @receiver(post_save, sender=Rerust)
 def send_email_to_manager(sender, instance, created, **kwargs):
+    id_manager = instance.id_manager
+    manager = Managers.objects.get(id=id_manager)
+
     if created:
         sudject = 'Новая заявка'
-        message = f"Новая заявка:\n\nИмя: {instance.name}\nEmail: {instance.email}\nВопрос: {instance.question}"
+        message = f"Новая заявка:\n\nИмя: {instance.name}\nEmail: {instance.email}\nВопрос: {instance.question}\nМенагер: {manager.email}"
         #message = f"A new request"
         from_email = 'mikh.kostarev@yandex.ru'
-        recipient_list = ['hangdi1990@gmail.com']
+        recipient_list = ['hangdi1990@gmail.com', manager.email]
         #recipient_list = {}
         send_mail(sudject, message, from_email, recipient_list)
 
 
-@receiver(post_save, sender=Rerust)
-def send_email_to_manager(sender, instance, created, **kwargs):
-    if created:
-        sudject = 'Заявка принята'
-        message = f"Заявка принята:\n\nИмя: {instance.name}\nEmail: {instance.email}\nВопрос: {instance.question}"
-        #message = f"A new request"
-        from_email = 'mikh.kostarev@yandex.ru'
-        #recipient_list = ['hangdi1990@gmail.com']
-        recipient_list = {instance.email}
-        send_mail(sudject, message, from_email, recipient_list)
+#@receiver(post_save, sender=Rerust)
+#def send_email_to_manager(sender, instance, created, **kwargs):
+#    if created:
+#        sudject = 'Заявка принята'
+#        message = f"Заявка принята:\n\nИмя: {instance.name}\nEmail: {instance.email}\nВопрос: {instance.question}"
+#        #message = f"A new request"
+#        from_email = 'mikh.kostarev@yandex.ru'
+#        #recipient_list = ['hangdi1990@gmail.com']
+#        recipient_list = {instance.email}
+#        send_mail(sudject, message, from_email, recipient_list)
 

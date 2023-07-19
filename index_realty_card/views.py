@@ -10,7 +10,14 @@ from request.models import Rerust
 
 def realty_detail_view(request, id):
     realty_card = Realty.objects.get(id=id)
-    form = RerustForm()
+    #form = RerustForm()
+    if request.method == 'POST':
+        form = RerustForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = RerustForm()
+    #similar_realty = Realty.objects.filter(cat=)
     return render(request, 'realty_card.html', {'realty_card': realty_card, 'form': form})
 
 #class IndexBaseView (CreateView):

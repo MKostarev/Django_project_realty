@@ -13,6 +13,9 @@
               <div class="portfolio-details-slider swiper">
                 <div class="swiper-wrapper align-items-center">
 
+                    <div class="swiper-slide">
+                    <img src="{{ realty_card.img.url }}" alt="">
+                  </div>
 
                     {% for i in realty_card.gallery.all %}
                   <div class="swiper-slide">
@@ -34,6 +37,18 @@
                     <li><strong>Цена</strong>: {{ realty_card.price }}</li>
                     <li><strong>Менеджер</strong>: {{ realty_card.managers }}</li>
                     <li><strong>ID</strong>: {{ realty_card.managers.id }}</li>
+                    <li><strong>Категория</strong>: {{ realty_card.cat }}</li>
+                    <li><strong>Категория</strong>: {{ request.path }}</li>
+
+                    {% for i in realty_card.all %}
+
+
+                         {{ i.name }}
+
+
+                    {% endfor %}
+
+
                 </ul>
               </div>
               <div class="portfolio-description">
@@ -64,8 +79,8 @@
       <section id="contact" class="contact">
         <div class="container">
 
-          <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
-                {% csrf_token %}
+          <!--<form action="" method="post" data-aos="fade-up" data-aos-delay="400">
+
              <div class="row">
               <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
@@ -83,7 +98,7 @@
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
-          </form>
+          </form> -->
 
         </div>
       </section>
@@ -97,7 +112,7 @@
         <input name="name" placeholder="Имя">
         <input name="email" placeholder="email">
         <input name="question" placeholder="question">
-        <input name="id_manager" value={{ realty_card.managers.id }}>
+        <input type="hidden" name="id_manager" value={{ realty_card.managers.id }}>
         <button type="submit"> Отправить </button>
     </form>
 
