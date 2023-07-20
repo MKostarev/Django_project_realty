@@ -74,9 +74,9 @@
     <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
         <div class="container">
-                 {% csrf_token %}
-          <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
 
+          <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
+                    {% csrf_token %}
              <div class="row">
               <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
@@ -90,7 +90,8 @@
               </div>
                   <p></p>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="id_manager" id="id_manager" value={{ realty_card.managers.id }}>
+                <input type="hidden" name="id_manager" value={{ realty_card.managers.id }}>
+                <input type="hidden" name="object_link" value={{ request.path }}>
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
@@ -103,8 +104,8 @@
 
     <div class="container">
 
-    <form action="" method="post">
-     {% csrf_token %}
+    <!-- <form action="" method="post">
+
         <input name="name" placeholder="Имя">
         <input name="email" placeholder="email">
         <input name="question" placeholder="question">
@@ -112,7 +113,7 @@
         <input type="hidden" name="object_link" value={{ request.path }}>
 
         <button type="submit"> Отправить </button>
-    </form>
+    </form> -->
 
 </div>
 
