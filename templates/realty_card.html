@@ -45,7 +45,6 @@
                         <a href="/realty_card/{{ i.id }}">{{ i.name }}</a><br>
                     {% endfor %}
 
-
                 </ul>
               </div>
               <div class="portfolio-description">
@@ -75,8 +74,8 @@
     <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
         <div class="container">
-
-          <!--<form action="" method="post" data-aos="fade-up" data-aos-delay="400">
+                 {% csrf_token %}
+          <form action="" method="post" data-aos="fade-up" data-aos-delay="400">
 
              <div class="row">
               <div class="col-md-6 form-group">
@@ -95,7 +94,7 @@
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
-          </form> -->
+          </form>
 
         </div>
       </section>

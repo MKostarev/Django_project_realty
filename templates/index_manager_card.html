@@ -90,7 +90,7 @@
               </div>
                   <p></p>
                   <div class="form-group mt-3">
-                <input type="text" class="form-control" name="id_manager" id="id_manager" value= {{ manager_card.id }} >
+                <input  type="hidden" class="form-control" name="id_manager" id="id_manager" value= {{ manager_card.id }} >
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
@@ -101,16 +101,16 @@
     <!-- End Contact Us Section -->
 
 
-    <div class="container">
+    <!-- <div class="container">
 
-    <form action="" method="post">
-     {% csrf_token %}
-        <input name="name" placeholder="Имя">
-        <input name="email" placeholder="email">
-        <input name="question" placeholder="question">
-        <input name="id_manager" value= {{ manager_card.id }} >
-        <button type="submit"> Отправить </button>
-    </form>
+   <form action="" method="post">
+    {% csrf_token %}
+       <input name="name" placeholder="Имя">
+       <input name="email" placeholder="email">
+       <input name="question" placeholder="question">
+       <input type="hidden" name="id_manager" value= {{ manager_card.id }} >
+       <button type="submit"> Отправить </button>
+   </form>-->
 
 </div>
 
