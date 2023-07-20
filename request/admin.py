@@ -6,7 +6,7 @@ from request.models import Rerust
 
 # Register your models here.
 class RequestAdminView(admin.ModelAdmin):
-    list_display = ('name', 'email', 'question', 'id_manager')
+    list_display = ('name', 'email', 'question', 'id_manager', 'object_link')
     search_fields = ('name', 'email')
 
 

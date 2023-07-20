@@ -14,7 +14,8 @@ def send_email_to_manager(sender, instance, created, **kwargs):
 
     if created:
         sudject = 'Новая заявка'
-        message = f"Новая заявка:\n\nИмя: {instance.name}\nEmail: {instance.email}\nВопрос: {instance.question}\nМенагер: {manager.email}"
+        message = f"Новая заявка:\n\nИмя: {instance.name}\nEmail: {instance.email}" \
+                  f"\nВопрос: {instance.question}\nМенагер: {manager.email}\nСсылка: {instance.object_link}"
         #message = f"A new request"
         from_email = 'mikh.kostarev@yandex.ru'
         recipient_list = ['hangdi1990@gmail.com', manager.email]

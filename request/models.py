@@ -6,4 +6,6 @@ class Rerust(models.Model):
     question = models.TextField()
     question2 = models.TextField(blank=True, null=True)
     id_manager = models.IntegerField(blank=True, null=True)
+    object_link = models.TextField(blank=True, null=True)
+
 

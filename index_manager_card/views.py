@@ -12,5 +12,11 @@ from request.forms import RerustForm
 def manager_detail_view(request, id):
     manager_card = Managers.objects.get(id=id)
     realty = Realty.objects.all()
-    form = RerustForm()
+    #form = RerustForm()
+    if request.method == 'POST':
+        form = RerustForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = RerustForm()
     return render(request, 'index_manager_card.html', {'manager_card': manager_card, 'form': form, 'realty': realty})

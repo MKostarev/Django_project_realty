@@ -38,14 +38,11 @@
                     <li><strong>Менеджер</strong>: {{ realty_card.managers }}</li>
                     <li><strong>ID</strong>: {{ realty_card.managers.id }}</li>
                     <li><strong>Категория</strong>: {{ realty_card.cat }}</li>
-                    <li><strong>Категория</strong>: {{ request.path }}</li>
+                    <li><strong>Ссылка</strong>: {{ request.path }}</li>
+                    <li><strong>Похожие объекты</strong>    </li>
 
-                    {% for i in realty_card.all %}
-
-
-                         {{ i.name }}
-
-
+                    {% for i in similar_object %}
+                        <a href="/realty_card/{{ i.id }}">{{ i.name }}</a><br>
                     {% endfor %}
 
 
@@ -113,6 +110,8 @@
         <input name="email" placeholder="email">
         <input name="question" placeholder="question">
         <input type="hidden" name="id_manager" value={{ realty_card.managers.id }}>
+        <input type="hidden" name="object_link" value={{ request.path }}>
+
         <button type="submit"> Отправить </button>
     </form>
 

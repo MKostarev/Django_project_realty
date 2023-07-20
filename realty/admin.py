@@ -16,6 +16,8 @@ class RealtyAdminView(admin.ModelAdmin):
     list_display_links = ('name', 'adres')
     inlines = [GalleryInline, ]
 
+#class CatAdminView(admin.ModelAdmin):
+#    list_display = ('cat', 'id')
 
 
 admin.site.register(Realty, RealtyAdminView)
