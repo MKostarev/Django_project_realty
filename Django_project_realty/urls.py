@@ -18,7 +18,7 @@ from index_realty_card.views import realty_detail_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<int:category>/', realtyy_view),
-    path('', IndexBaseView.as_view()),
+    path('', IndexBaseView.as_view(), name='home'),
     path('managers/', ManagersView.as_view()),
     path('request/', FormView.as_view()),
     path('index/', RealtyListView.as_view()),

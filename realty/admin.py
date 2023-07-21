@@ -16,10 +16,11 @@ class RealtyAdminView(admin.ModelAdmin):
     list_display_links = ('name', 'adres')
     inlines = [GalleryInline, ]
 
-#class CatAdminView(admin.ModelAdmin):
-#    list_display = ('cat', 'id')
+class CatAdmin(admin.ModelAdmin):
+    list_display = ('id', 'cat')
+    list_display_links = ('id', 'cat')
 
 
 admin.site.register(Realty, RealtyAdminView)
-admin.site.register(Category_realty)
+admin.site.register(Category_realty, CatAdmin)
 admin.site.register(Gallery)
