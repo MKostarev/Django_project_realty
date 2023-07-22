@@ -44,6 +44,8 @@
                     <li><strong>Похожие объекты</strong>    </li>
 
                         <a href="{{ realty_card.get_absolute_url }}"> Объект</a><br>
+                        <a href="{{ request.build_absolute_uri }}">Полная ссылка на эту страницу</a>
+                        <a href="{{ request.build_absolute_uri }}">{{ request.build_absolute_uri }}</a>
 
                     {% for i in similar_object %}
                         <a href="/realty_card/{{ i.id }}">{{ i.name }}</a><br>
@@ -97,7 +99,7 @@
               <div class="form-group mt-3">
                 <input type="hidden" name="id_manager" value={{ realty_card.managers.id }}>
 
-                <input type="hidden" name="object_link" value= {{ realty_card.get_absolute_url }}>
+                <input type="hidden" name="object_link" value= {{ request.build_absolute_uri }}> 
               </div>
                   <p></p>
               <div class="text-center"><button type="submit" class="btn btn-success" >Отправить сообщение</button></div>
