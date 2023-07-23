@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'index_managers',
     'index_request',
     'index_realty_search',
-    'mail_send'
+    'mail_send',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

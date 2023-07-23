@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
+from api.views import RealtyApiView
 from index_manager_card.views import manager_detail_view
 from index_managers.views import IndexManagersView
 from index_realty_search.views import IndexRealtySearchResult
@@ -14,6 +16,9 @@ from realty.views import realtyy_view, RealtyListView
 from request.views import FormView
 from index_base.views import IndexBaseView
 from index_realty_card.views import realty_detail_view
+router = routers.DefaultRouter()
+router.register('realty', RealtyApiView)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +34,9 @@ urlpatterns = [
     #path('index_request/', IndexRequestView.as_view()),
     path('realty_search/', IndexRealtySearchResult.as_view(), name='search'),
     path('realty_card/<int:id>/', realty_detail_view, name='realty_card'),
-    path('index_manager_card/<int:id>/', manager_detail_view, name='manager_card')
+    path('index_manager_card/<int:id>/', manager_detail_view, name='manager_card'),
+    path('api/', include(router.urls))
+
 
 
 
