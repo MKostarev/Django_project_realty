@@ -1,7 +1,7 @@
 {% extends 'index_base.html' %}
 {% load static %}
 
-
+{% load thumbnail %}
 {% block content %}
 <!-- ======= Portfolio Details Section ======= -->
       <section id="portfolio-details" class="portfolio-details">
@@ -14,12 +14,12 @@
                 <div class="swiper-wrapper align-items-center">
 
                     <div class="swiper-slide">
-                    <img src="{{ realty_card.img.url }}" alt="">
+                        <a href="{{ realty_card.img.url }}"><img src="{% thumbnail realty_card.img 900x0 %}" alt=""></a>
                   </div>
 
                     {% for i in realty_card.gallery.all %}
                   <div class="swiper-slide">
-                    <img src="{{ i.image.url }}" alt="">
+                    <img src="{% thumbnail i.image 900x0 %}" alt="">
                   </div>
                     {% endfor %}
 
@@ -44,8 +44,7 @@
                     <li><strong>Похожие объекты</strong>    </li>
 
                         <a href="{{ realty_card.get_absolute_url }}"> Объект</a><br>
-                        <a href="{{ request.build_absolute_uri }}">Полная ссылка на эту страницу</a>
-                        <a href="{{ request.build_absolute_uri }}">{{ request.build_absolute_uri }}</a>
+
 
                     {% for i in similar_object %}
                         <a href="/realty_card/{{ i.id }}">{{ i.name }}</a><br>

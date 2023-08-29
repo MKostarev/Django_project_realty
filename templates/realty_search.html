@@ -1,7 +1,7 @@
 
 {% extends 'index_base.html' %}
 
-
+{% load thumbnail %}
 {% block content %}
 
     {# стили для формы поиска#}
@@ -90,12 +90,16 @@
       <section id="features" class="features">
         <div class="container">
           <div class="row">
+
               {% for i in all_realty %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
               <div class="card" data-aos="fade-up">
                   <h5 class="card-title"><a href="/realty_card/{{ i.id }}">Объект: {{ i.name }}</a></h5>
 
-                <a href="/realty_card/{{ i.id }}"><img src="{{ i.img.url }}"  class="card-img-top" alt="Image" style="height: 200px"></a>
+
+
+                <a href="/realty_card/{{ i.id }}"><img src="{% thumbnail i.img 0x200 %}"  class="card-img-top" alt="Image" style="height: 200px"></a>
+
 
                 <div class="card-body">
                   <!-- <i class="bx bx-tachometer"></i>-->
