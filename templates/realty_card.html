@@ -17,6 +17,7 @@
                         <a href="{{ realty_card.img.url }}"><img src="{% thumbnail realty_card.img 900x0 %}" alt=""></a>
                   </div>
 
+
                     {% for i in realty_card.gallery.all %}
                   <div class="swiper-slide">
                     <img src="{% thumbnail i.image 900x0 %}" alt="">
