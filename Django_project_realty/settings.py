@@ -156,3 +156,5 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
+DOMAIN_NAME = 'domik78.ru'
+
