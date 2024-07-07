@@ -149,12 +149,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'mikh.kostarev@yandex.ru'
-EMAIL_HOST_PASSWORD = 'nlqgzlyjxbabhfqq'
-EMAIL_PORT = 465
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
-DOMAIN_NAME = 'domik78.ru'
+DOMAIN_NAME = ''
 
